@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.itcast.dao.GoodsDao">
+
+    <select id="selectGoods" resultType="cn.itcast.domain.Goods">
+        SELECT `id`,`name`,`amount`,`price` FROM goods WHERE `id`=#{id}
+    </select>
+
+    <update id="updateGoods">
+        UPDATE `goods` SET `amount`=`amount`-#{amount} WHERE `id`=#{id}
+    </update>
+</mapper>
